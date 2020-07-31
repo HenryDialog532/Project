@@ -2,6 +2,12 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
+            .navbar{
+              background-color: #127ba3 !important;
+            }
+            .navbar a{
+              color: white;
+            }
             .container{
                 position: relative;
                 width: 100%;
@@ -19,11 +25,12 @@
               margin-top: 5px;
               width:10%;
               background-color: #f0f0f0;
-              max-height: 555px;
+              max-height: 540px;
               position: fixed!important;
               overflow: auto;
             }
             .left-nav-menu-item{
+              color: red;
               cursor: pointer;
               width: 15px;
               display: block;
@@ -41,37 +48,40 @@
               width: 100%;
               background-color: #f0f0f0;
             }
-            .navbar {
+            .navbar-footer {
 								radius:2;
 								overflow: hidden;
-								background-color:  #f0f0f0;
+                /* background-color:  #f0f0f0; */
+                background-color: #127ba3;
 								position: fixed;
 								bottom: 0;
 								width: 100%;
 								}
 								
-								.navbar a {
+								.navbar-footer a {
 								float: left;								
-                background-color: #f2f2f2;
-                color:black;
+                /* background-color: #f2f2f2;
+                color:black; */
+                background-color: #127ba3;
+                color: white;
 								text-align: center;
 								padding: 3px 16px;
 								text-decoration: none;
                 font-size: 17px;
                 transform: skew(-20deg);
-                border: 1px solid black;
+                border: 1px solid white;
 								}
                 
-                .navbar span{
+                .navbar-footer span{
                   transform: skew(20deg);
                   display: inline-block;
                 }
-								.navbar a:hover {
+								.navbar-footer a:hover {
                   background-color: white;
                   color: black;
 								}
 								
-								.navbar a.active {
+								.navbar-footer a.active {
 								background-color: white;
 								color: black;
 								}
@@ -79,7 +89,7 @@
                 </style>
     </head>
     <body>
-        <button style="margin-right:1.5em; border:0;">file</button>
+        <!-- <button style="margin-right:1.5em; border:0;">file</button>
         <button style="margin-right:1.5em; border:0;">Edit</button>
         <button style="margin-right:1.5em; border:0;">View</button>
         <button style="margin-right:1.5em; border:0;">Format</button>
@@ -89,8 +99,51 @@
         "margin-right:1.5em; border:0;">Tools</button>
         <button style="margin-right:1.5em; border:0;">Options</button>
         <button style="margin-right:1.5em; border:0;">Window</button>
-        <button style="margin-right:1.5em; border:0;">Help</button>
+        <button style="margin-right:1.5em; border:0;">Help</button> -->
 
+        <!-- <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                
+                <li><a href="#">Page 3</a></li>
+              </ul>
+            </div>
+          </nav> -->
+          <nav class="navbar navbar-expand-sm bg-light">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">File</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Edit</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">View</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Format</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">View</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Compas</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">eServices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                      </li>
+              </ul>
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </nav>
+             
+        
         <div class="container">
             <img src="assets\1.PNG" style="margin-right:1.5em; border:0;" class="image">
             <img src="assets\2.PNG" style="margin-right:1.5em; border:0;" class="image">
@@ -197,7 +250,7 @@
         <div>
             <img src="assets\pdfimage.PNG" style="margin-left: 170px;">
         </div>
-        <div class="navbar">            
+        <div class="navbar-footer">            
             <a href="#subject"><span>Subject</span></a>
             <a href="#sales"><span class="active">Sales</span></a>
             <a href="#uad"><span>UAD</span></a>
