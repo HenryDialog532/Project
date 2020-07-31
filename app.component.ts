@@ -11,9 +11,10 @@ import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
   
 })
 export class AppComponent {
+  contentPath = 'assets/pdfimage.PNG';
   title = 'ACIwireframe';
   items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
-  showPDF(id){
-    debugger;
+  showPDF(pdfName){
+    this.contentPath = 'assets/' + pdfName + '.PNG';
   }
 }

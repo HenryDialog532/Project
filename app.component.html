@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style>
+          .center-align{text-align: center}
             .navbar{
               background-color: #127ba3 !important;
             }
@@ -32,7 +33,7 @@
             .left-nav-menu-item{
               color: red;
               cursor: pointer;
-              width: 15px;
+              text-align: center;
               display: block;
               padding: 8px 16px;
               text-align: left;
@@ -114,6 +115,16 @@
           </nav> -->
           <nav class="navbar navbar-expand-sm bg-light">
               <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Dropdown link
+                      </a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                      </div>
+                    </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">File</a>
                 </li>
@@ -139,12 +150,12 @@
                         <a class="nav-link" href="#">Tools</a>
                       </li>
               </ul>
-              <input class="form-control mr-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+              <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
             </nav>
              
         
-        <div class="container">
+        <div>
             <img src="assets\1.PNG" style="margin-right:1.5em; border:0;" class="image">
             <img src="assets\2.PNG" style="margin-right:1.5em; border:0;" class="image">
             <img src="assets\3.PNG" style="margin-right:1.5em; border:0;" class="image">
@@ -160,95 +171,76 @@
             
         </div>
 
-        <!-- <table class="scroll">
-          <thead>
-            <tr>
-              <th>Head 1</th>
-              <th>Head 2</th>
-              <th>Head 3</th>
-              <th>Head 4</th>
-              <th>Head 5</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Content 1</td>
-              <td>Content 2</td>
-              <td>Content 3</td>
-              <td>Content 4</td>
-              <td>Content 5</td>
-            </tr>
-          </tbody>
-        </table> -->
         <div class="left-nav-menu">
           <div>
-            <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px" (click)="showPDF(1)"></i>
-            <div>File 1</div>
+            <i class="fa fa-file-pdf-o left-nav-menu-item" onclick="showPDF('1')" style="font-size:36px;text-align: center;" (click)="showPDF(1)"></i>
+            <div class="center-align">File 1</div>
           </div>
           <div>
-              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-              <div>File 2</div>
+              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+              <div class="center-align">File 2</div>
           </div>
           <div>
-              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-              <div>File 3</div>
+              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+              <div class="center-align">File 3</div>
           </div>
           <div>
-              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-              <div>File 4</div>
+              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+              <div class="center-align">File 4</div>
           </div>
           <div>
-              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-              <div>File 5</div>
+              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+              <div class="center-align">File 5</div>
           </div>
           <div>
-              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-              <div>File 6</div>
+              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+              <div class="center-align">File 6</div>
           </div>
           <div>
-              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-              <div>File 7</div>
+              <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+              <div class="center-align">File 7</div>
             </div>
             <div>
-                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                <div>File 8</div>
+                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                <div class="center-align">File 8</div>
             </div>
             <div>
-                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                <div>File 9</div>
+                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                <div class="center-align">File 9</div>
             </div>
             <div>
-                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                <div>File 10</div>
+                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                <div class="center-align">File 10</div>
             </div>
             <div>
-                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                <div>File 11</div>
+                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                <div class="center-align">File 11</div>
             </div>
             <div>
-                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                <div>File 12</div>
+                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                <div class="center-align">File 12</div>
             </div>
             <div>
-                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                <div>File 13</div>
+                <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                <div class="center-align">File 13</div>
               </div>
               <div>
-                  <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                  <div>File 14</div>
+                  <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                  <div class="center-align">File 14</div>
               </div>
               <div>
-                  <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                  <div>File 15</div>
+                  <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                  <div class="center-align">File 15</div>
               </div>
               <div>
-                  <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px"></i>
-                  <div>File 16</div>
+                  <i class="fa fa-file-pdf-o left-nav-menu-item" style="font-size:36px;text-align: center;"></i>
+                  <div class="center-align">File 16</div>
               </div>
               
         </div>
         <div>
-            <img src="assets\pdfimage.PNG" style="margin-left: 170px;">
+            <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
+            <img [src]="contentPath" style="margin-left: 170px;">
         </div>
         <div class="navbar-footer">            
             <a href="#subject"><span>Subject</span></a>
