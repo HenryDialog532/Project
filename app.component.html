@@ -9,6 +9,10 @@
             .navbar a{
               color: white;
             }
+            .nav-item:hover .nav-link:hover {
+              background: white;
+              color: #127ba3;
+            }
             .container{
                 position: relative;
                 width: 100%;
@@ -26,7 +30,7 @@
               margin-top: 5px;
               width:10%;
               background-color: #f0f0f0;
-              max-height: 540px;
+              max-height: 650px;
               position: fixed!important;
               overflow: auto;
             }
@@ -41,6 +45,16 @@
               white-space: normal;
               float: none;
               outline: 0;
+            }
+            .nav-item.dropdown:hover .dropdown-menu {
+              display: block;
+            }
+            .dropdown-menu {
+              background-color: #127ba3;
+            }
+            .dropdown-menu a:hover{
+              background-color: white;
+              color:  #127ba3;
             }
             .footer-menu{
               position: fixed;
@@ -115,18 +129,14 @@
           </nav> -->
           <nav class="navbar navbar-expand-sm bg-light">
               <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Dropdown link
-                      </a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
-                      </div>
-                    </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">File</a>
+                  
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#">File</a>
+                  <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">New</a>
+                      <a class="dropdown-item" href="#">Open</a>
+                      <a class="dropdown-item" href="#">Save</a>
+                    </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Edit</a>
