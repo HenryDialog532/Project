@@ -1,0 +1,120 @@
+var HelloDlg =
+{
+    initialize: function (dialog)
+    {
+        var todayDate = dialog.store()["date"];
+        todayDate = "Date: " + util.printd("mmmm dd, yyyy", new Date());
+        dialog.load({ "date": todayDate });
+    },
+    description:
+    {
+        elements:
+        [
+            {
+                type: "view",
+                elements:
+                [
+					{
+						type: "view",
+                        align_children: "align_row",
+                        elements:
+                        [
+                            {
+                                item_id: "str1",
+								name: "Property Address",
+								type: "static_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_left",
+								char_width: 30,
+								height: 20
+                            },
+                            {
+                                type: "ok",
+								ok_name: "Hide Guidance",
+								alignment: "align_right",
+								width: 50
+                            },
+							{
+                                item_id: "str1",
+								name: "UAD Guidance",
+								type: "static_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_right",
+								char_width: 30,
+								height: 20
+                            }
+                        ]
+					},
+					{
+						type: "view",
+                        align_children: "align_row",
+                        elements:
+                        [
+                            {
+                                item_id: "str2",
+								name: "Street No: ",
+								type: "static_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_left",
+								char_width: 30,
+								height: 20
+                            },
+							{
+                                item_id: "str3",
+								name: "Street Name: ",
+								type: "static_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_center",
+								char_width: 30,
+								height: 20
+                            },
+							{
+                                item_id: "str4",
+								name: "Property Address, City, State, ZIP Code",
+								type: "static_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_right",
+								char_width: 30,
+								height: 20
+                            }
+                        ]
+					},
+                    {
+						type: "view",
+                        align_children: "align_row",
+                        elements:
+                        [
+							{
+								item_id: "txtsno",
+								name: "txtsno",
+								type: "edit_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_left",
+								char_width: 30,
+								height: 20
+							},
+							{
+								item_id: "txtsname",
+								name: "txtsname",
+								type: "edit_text",
+								font: "dialog",
+								bold: true,
+								alignment: "align_center",
+								char_width: 30,
+								height: 20
+							}
+						]
+                    }
+					
+                ]
+            }
+        ]
+    }
+};          
+app.execDialog(HelloDlg);
