@@ -1,120 +1,40 @@
-var HelloDlg =
-{
-    initialize: function (dialog)
-    {
-        var todayDate = dialog.store()["date"];
-        todayDate = "Date: " + util.printd("mmmm dd, yyyy", new Date());
-        dialog.load({ "date": todayDate });
-    },
-    description:
-    {
-        elements:
-        [
-            {
-                type: "view",
-                elements:
-                [
-					{
-						type: "view",
-                        align_children: "align_row",
-                        elements:
-                        [
-                            {
-                                item_id: "str1",
-								name: "Property Address",
-								type: "static_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_left",
-								char_width: 30,
-								height: 20
-                            },
-                            {
-                                type: "ok",
-								ok_name: "Hide Guidance",
-								alignment: "align_right",
-								width: 50
-                            },
-							{
-                                item_id: "str1",
-								name: "UAD Guidance",
-								type: "static_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_right",
-								char_width: 30,
-								height: 20
-                            }
-                        ]
-					},
-					{
-						type: "view",
-                        align_children: "align_row",
-                        elements:
-                        [
-                            {
-                                item_id: "str2",
-								name: "Street No: ",
-								type: "static_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_left",
-								char_width: 30,
-								height: 20
-                            },
-							{
-                                item_id: "str3",
-								name: "Street Name: ",
-								type: "static_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_center",
-								char_width: 30,
-								height: 20
-                            },
-							{
-                                item_id: "str4",
-								name: "Property Address, City, State, ZIP Code",
-								type: "static_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_right",
-								char_width: 30,
-								height: 20
-                            }
-                        ]
-					},
-                    {
-						type: "view",
-                        align_children: "align_row",
-                        elements:
-                        [
-							{
-								item_id: "txtsno",
-								name: "txtsno",
-								type: "edit_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_left",
-								char_width: 30,
-								height: 20
-							},
-							{
-								item_id: "txtsname",
-								name: "txtsname",
-								type: "edit_text",
-								font: "dialog",
-								bold: true,
-								alignment: "align_center",
-								char_width: 30,
-								height: 20
-							}
-						]
-                    }
-					
-                ]
-            }
-        ]
+ <div>
+            <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
+            <input type="button" value="Open Guidance popup" style="margin: 80px 0px 0px 150px;" (click)="open(uadgdncpopup)">
+            <ng-template #uadgdncpopup let-modal>
+              <div class="modal-header">                
+                <div class="modal-title" id="modal-basic-title">UAD Compliance</div>
+                <button type="button" class="close right" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                  <span aria-hidden="true">×</span>
+                </button>
+                
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                      <div class="col-sm-8">Sale Type & Financing Concessions</div>
+                      <!-- <div class="col">
+                        <div class="col">Sale Type & Financing Concessions</div>
+                        <div class="col">
+                            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
+                        </div>
+                        <div class="col"></div>
+                      </div>
+                      <div class="col">UAD Guidance</div> -->
+                    </div>
+                  </div>
+              </div>
+	      
+	      
+	      
+	       private getDismissReason(reason: any): string {
+
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
     }
-};          
-app.execDialog(HelloDlg);
+
+  }
