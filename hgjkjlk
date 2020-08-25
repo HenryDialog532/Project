@@ -15,15 +15,31 @@
       <div class="modal-body">
         <div class="container">
           <div class="row">
-              <div class="col-sm-8">Sale Type & Financing Concessions</div>
-              <!-- <div class="col">
-                <div class="col">Sale Type & Financing Concessions</div>
-                <div class="col">
-                    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
+              <div class="row col-sm-12">
+                <div class="col-sm-8">
+                  <div class="row border-bottom bottom-margin">
+                      <div class="col-sm-8 bold">
+                        Sale Type & Financing Concessions
+                      </div>
+                      <div class="col-sm-4">
+                          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
+                      </div>
+                  </div>
+                  <div class="row bottom-margin">
+                      <div class="col-sm-4 align-right">
+                        Sale Type: 
+                      </div>
+                      <div class="col-sm-6">
+                          <select class="form-control" >
+                              <option *ngFor="let o of SaleTypes">{{o}}</option>
+                          </select>
+                      </div>
+                  </div>
                 </div>
-                <div class="col"></div>
+                <div class="col-sm-4">
+                  <div class="row border-bottom">UAD Guidance</div>
+                </div>
               </div>
-              <div class="col">UAD Guidance</div> -->
             </div>
           </div>
       </div>
