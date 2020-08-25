@@ -1,54 +1,25 @@
-<div class="page">
-  <div class="header">Angular sample</div>
-  <div #viewer class="viewer"></div>
-  <div>
-    <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
-    <input type="button" value="Open Guidance popup" style="margin: 80px 0px 0px 150px;" (click)="open(uadgdncpopup)">
-    <ng-template #uadgdncpopup let-modal>
-      <div class="modal-header">                
-        <div class="modal-title" id="modal-basic-title">UAD Compliance</div>
-        <button type="button" class="close right" aria-label="Close" (click)="modal.dismiss('Cross click')">
-          <span aria-hidden="true">×</span>
-        </button>
-        
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-              <div class="row col-sm-12">
-                <div class="col-sm-8">
-                  <div class="row border-bottom bottom-margin">
-                      <div class="col-sm-8 bold">
-                        Sale Type & Financing Concessions
-                      </div>
-                      <div class="col-sm-4">
-                          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
-                      </div>
-                  </div>
-                  <div class="row bottom-margin">
-                      <div class="col-sm-4 align-right">
-                        Sale Type: 
-                      </div>
-                      <div class="col-sm-6">
-                          <select class="form-control" >
-                              <option *ngFor="let o of SaleTypes">{{o}}</option>
-                          </select>
-                      </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="row border-bottom">UAD Guidance</div>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
-        <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Ok</button>
-      </div>
-    </ng-template>
-    <!-- <img [src]="contentPath" style="margin-left: 170px;"> -->
-</div>
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
 
-</div>
+.header {
+  height: 60px;
+  padding: 8px 8px 8px 16px;
+  background: #00a5e4;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  line-height: 44px;
+  color: white;
+}
+
+app-webviewer {
+  flex: 1;
+  margin: 8px;
+  -webkit-box-shadow: 1px 1px 10px #999;
+          box-shadow: 1px 1px 10px #999;
+}
+
+.viewer { width: 100%; height: 100%; }
