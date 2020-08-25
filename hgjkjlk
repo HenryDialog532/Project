@@ -1,40 +1,38 @@
- <div>
-            <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
-            <input type="button" value="Open Guidance popup" style="margin: 80px 0px 0px 150px;" (click)="open(uadgdncpopup)">
-            <ng-template #uadgdncpopup let-modal>
-              <div class="modal-header">                
-                <div class="modal-title" id="modal-basic-title">UAD Compliance</div>
-                <button type="button" class="close right" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                  <span aria-hidden="true">×</span>
-                </button>
-                
+<div class="page">
+  <div class="header">Angular sample</div>
+  <div #viewer class="viewer"></div>
+  <div>
+    <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
+    <input type="button" value="Open Guidance popup" style="margin: 80px 0px 0px 150px;" (click)="open(uadgdncpopup)">
+    <ng-template #uadgdncpopup let-modal>
+      <div class="modal-header">                
+        <div class="modal-title" id="modal-basic-title">UAD Compliance</div>
+        <button type="button" class="close right" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+        
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-8">Sale Type & Financing Concessions</div>
+              <!-- <div class="col">
+                <div class="col">Sale Type & Financing Concessions</div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
+                </div>
+                <div class="col"></div>
               </div>
-              <div class="modal-body">
-                <div class="container">
-                  <div class="row">
-                      <div class="col-sm-8">Sale Type & Financing Concessions</div>
-                      <!-- <div class="col">
-                        <div class="col">Sale Type & Financing Concessions</div>
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
-                        </div>
-                        <div class="col"></div>
-                      </div>
-                      <div class="col">UAD Guidance</div> -->
-                    </div>
-                  </div>
-              </div>
-	      
-	      
-	      
-	       private getDismissReason(reason: any): string {
+              <div class="col">UAD Guidance</div> -->
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Ok</button>
+      </div>
+    </ng-template>
+    <!-- <img [src]="contentPath" style="margin-left: 170px;"> -->
+</div>
 
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-
-  }
+</div>
