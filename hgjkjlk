@@ -1,27 +1,123 @@
-@import "~bootstrap/dist/css/bootstrap.css";
+<div class="page">
+  <div class="header">Angular sample</div>
+  <div #viewer class="viewer"></div>
+  <div>
+    <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
+    <button type="button" (click)="showModalDialog()" pButton icon="pi pi-external-link" label="Show">Show dialog</button>
+    <p-dialog header="Guidance" [(visible)]="displayModal" [modal]="true" [style]="{width: '65vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+      
+        <div class="container p-body">
+            <div class="row">
+                <div class="row col-sm-12">
+                  <div class="col-sm-8">
+                    <div class="row border-bottom bottom-margin">
+                        <div class="col-sm-8 bold">
+                          Sale Type & Financing Concessions
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-outline-dark btn-hide-guid" (click)="modal.close('Save click')">Hide Guidance</button>
+                        </div>
+                    </div>
+                    <div class="row bottom-margin">
+                        <div class="col-sm-4 align-right">
+                          Sale Type: 
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-control" >
+                                <option *ngFor="let o of SaleTypes">{{o}}</option>
+                            </select>
+                        </div>
+                    </div>
 
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+                    <div class="row bottom-margin">
+                        <div class="col-sm-4 align-right">
+                          Financing Type: 
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-control" >
+                                <option *ngFor="let f of FincanceTypes">{{f}}</option>
+                            </select>
+                        </div>
+                    </div>
 
-.modal-content {
-  width: 800px;
-  background-color: whitesmoke;
-  margin: auto;
-  border: 1px solid;
-}
+                    <div class="row bottom-margin">
+                        <div class="col-sm-4 align-right">
+                          If other describe 
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" >
+                        </div>
+                    </div>
 
-.bold{
-  font-weight: bold;
-}
-.border-bottom{
-  border-bottom: 1px solid !important;
-}
-.align-right{
-  text-align: right;
-}
-.bottom-margin{
-  margin-bottom: 10px;
-}
+                    <div class="row bottom-margin">
+                        <div class="col-sm-4 align-right">
+                          Concession Amount
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" >
+                        </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="row border-bottom guid-text">UAD Guidance</div>
+                    <div class="row">UAD Guidance</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+      <p-footer class="p-footer">
+        <button type="button" pButton icon="pi pi-check" (click)="displayModal=false" label="Cancel"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="displayModal=false" label="Ok" class="ui-button-secondary"></button>
+      </p-footer>
+    </p-dialog>
+    <input type="button" value="Open Guidance popup" style="margin: 80px 0px 0px 150px;" (click)="open(uadgdncpopup)">
+    <ng-template #uadgdncpopup let-modal>
+      <div class="modal-header">                
+        <div class="modal-title" id="modal-basic-title">UAD Compliance</div>
+        <button type="button" class="close right" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">×</span>
+        </button>
+        
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+              <div class="row col-sm-12">
+                <div class="col-sm-8">
+                  <div class="row border-bottom bottom-margin">
+                      <div class="col-sm-8 bold">
+                        Sale Type & Financing Concessions
+                      </div>
+                      <div class="col-sm-4">
+                          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Hide Guidance</button>
+                      </div>
+                  </div>
+                  <div class="row bottom-margin">
+                      <div class="col-sm-4 align-right">
+                        Sale Type: 
+                      </div>
+                      <div class="col-sm-6">
+                          <select class="form-control" >
+                              <option *ngFor="let o of SaleTypes">{{o}}</option>
+                          </select>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="row border-bottom">UAD Guidance</div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Ok</button>
+      </div>
+    </ng-template>
+    <!-- <img [src]="contentPath" style="margin-left: 170px;"> -->
+</div>
+
+</div>
