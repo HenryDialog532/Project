@@ -1,110 +1,23 @@
-import { Component, ViewChild, OnInit, ElementRef, AfterViewInit } from '@angular/core';
-import WebViewer from '@pdftron/webviewer';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {DialogModule} from 'primeng/dialog';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {ButtonModule} from 'primeng/button';
+import { AppComponent } from './app.component';
 
-// import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
-import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-
-
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserAnimationsModule,
+    BrowserModule,
+    NgbModule,
+    DialogModule,
+    ButtonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild('viewer', { static: false }) viewer: ElementRef;
-  wvInstance: any;
-  closeResult: string;
-  SaleTypes:any = ["Arms length sale", "Sale 2", "Sale 3", "Sale 4"];
-  FincanceTypes:any = ["Cash", "Credit", "Debit", "Other"];
-  displayModal: boolean;
-
-    display: boolean = false;
-
-    showDialog() {
-        this.display = true;
-    }
-
-
-  constructor(private modalService: NgbModal) {}
-  ngAfterViewInit(): void {
-
-    WebViewer({
-      path: '../lib',
-      initialDoc: '../files/Discover.pdf'
-    }, this.viewer.nativeElement).then(instance => {
-      this.wvInstance = instance;
-
-      // now you can access APIs through this.webviewer.getInstance()
-      instance.openElements(['notesPanel']);
-      // see https://www.pdftron.com/documentation/web/guides/ui/apis for the full list of APIs
-
-      // or listen to events from the viewer element
-      this.viewer.nativeElement.addEventListener('pageChanged', (e) => {
-        const [ pageNumber ] = e.detail;
-        console.log(`Current page is ${pageNumber}`);
-      });
-
-      // or from the docViewer instance
-      instance.docViewer.on('annotationsLoaded', () => {
-        console.log('annotations loaded');
-      });
-
-      instance.docViewer.on('documentLoaded', this.wvDocumentLoadedHandler)
-    })
-  }
-
-  ngOnInit() {
-    this.wvDocumentLoadedHandler = this.wvDocumentLoadedHandler.bind(this);
-  }
-
-  wvDocumentLoadedHandler(): void {
-    // you can access docViewer object for low-level APIs
-    const docViewer = this.wvInstance;
-    const annotManager = this.wvInstance.annotManager;
-    // and access classes defined in the WebViewer iframe
-    const { Annotations } = this.wvInstance;
-    // const rectangle = new Annotations.RectangleAnnotation();
-    // rectangle.PageNumber = 1;
-    // rectangle.X = 100;
-    // rectangle.Y = 100;
-    // rectangle.Width = 250;
-    // rectangle.Height = 250;
-    // rectangle.StrokeThickness = 5;
-    // rectangle.Author = annotManager.getCurrentUser();
-    // annotManager.addAnnotation(rectangle);
-    // annotManager.drawAnnotations(rectangle.PageNumber);
-    // see https://www.pdftron.com/api/web/WebViewer.html for the full list of low-level APIs
-  }
-
-  
-  showModalDialog() {
-    this.displayModal = true;
-}
-
-  open(content) {
-
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-
-    });
-
-  }
-
-
-  private getDismissReason(reason: any): string {
-
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-
-  }
-
-
-}
+export class AppModule { }
