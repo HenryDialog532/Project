@@ -1,57 +1,130 @@
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~primeng/resources/primeng.css";
+ <div>
+    <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
+    <button type="button" (click)="showModalDialog()" pButton icon="pi pi-external-link" label="Show">Show dialog</button>
+    <p-dialog header="UAD Compliance" [(visible)]="displayModal" [modal]="true" [style]="{width: '65vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+      
+        <div class="container p-body">
+            <div class="row">
+                <div class="row col-sm-12">
+                  <div class="col-sm-8">
+                    <div class="row border-bottom bottom-margin">
+                        <div class="col-sm-8 bold">
+                          Date Time of Sale
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" class="btn btn-outline-dark btn-hide-guid" (click)="modal.close('Save click')">Hide Guidance</button>
+                        </div>
+                    </div>
+                    <div class="row bottom-margin">
+                        <div class="col-sm-3 align-right">
+                          Status Type: 
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control" >
+                                <option *ngFor="let o of SaleTypes">{{o}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2 align-right">
+                          Date: 
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="date" class="p-date">
+                        </div>
+                    </div>
 
-html, body {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+                    <div class="row bottom-margin">
+                      <div class="col-sm-3 align-right">
+                        Contract Date: 
+                      </div>
+                      <div class="col-sm-3">
+                        <input type="date" class="p-date">
+                      </div>
+                      <div class="col-sm-2 align-right">
+                        <input type="checkbox" ><span>Unk</span>
+                      </div>
+                    </div>
 
-.modal-content {
-  width: 800px;
-  background-color: whitesmoke;
-  margin: auto;
-  border: 1px solid;
-}
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="row border-bottom guid-text">UAD Guidance</div>
+                    <div>
+                      Then, Select the corresponding data commensurate to the status.
+                      <br>
+                      If the Status Type is "Settled Sale", a Contract data is required. If the Contract Date is not known, then select "Unk"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-.bold{
-  font-weight: bold;
-}
-.border-bottom{
-  border-bottom: 1px solid !important;
-}
-.align-right{
-  text-align: right;
-}
-.bottom-margin{
-  margin-bottom: 10px;
-}
+      <p-footer class="p-footer">
+        <button type="button" pButton icon="pi pi-check" (click)="displayModal=false" label="Cancel"></button>
+        <button type="button" pButton icon="pi pi-times" (click)="displayModal=false" label="Ok" class="ui-button-secondary"></button>
+      </p-footer>
+    </p-dialog>
+   
+</div>
+<div>
+  <!-- <img src="assets\pdfimage.PNG" style="margin-left: 170px;"> -->
+  <button type="button" (click)="showModalDialog1()" pButton icon="pi pi-external-link" label="Show">Show dialog1</button>
+  <p-dialog header="UAD Compliance" [(visible)]="displayModal1" [modal]="true" [style]="{width: '65vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    
+      <div class="container p-body">
+          <div class="row">
+              <div class="row col-sm-12">
+                <div class="col-sm-8">
+                  <div class="row border-bottom bottom-margin">
+                      <div class="col-sm-8 bold">
+                        Commercial Space
+                      </div>
+                      <div class="col-sm-4">
+                          <button type="button" class="btn btn-outline-dark btn-hide-guid" (click)="modal.close('Save click')">Hide Guidance</button>
+                      </div>
+                  </div>
+                  <div class="row bottom-margin">
+                      <div class="col-sm-8">
+                        Is there any commercial space in the project?
+                      </div>
+                      <div class="col-sm-3">
+                          <input type="radio" name="isCommercial">Yes
+                          <input type="radio" name="isCommercial">No
+                      </div>
+                  </div>
 
-/* primeng styles */
+                  <div class="row bottom-margin">
+                      <div class="col-sm-5">
+                        Commercial Space Percent: 
+                      </div>
+                      <div class="col-sm-2">
+                        <input type="text" value="10">
+                      </div>
+                  </div>
 
-.p-dialog {
-  border: 1px solid black;
-}
-.p-dialog-header, .p-dialog-footer{
-  background-color: lightgray;
-}
-.p-footer{
-  float: right;
-}
-.p-body{
-  background-color: white;
-}
-.btn-hide-guid{
-  margin-top:5px;
-  margin-bottom: 5px;
-}
-.guid-text{
-  margin-top: 24px;
-  font-weight: bold;
-}
-.p-button{
-  background-color: #FF5722;
-  color: white;
-  border-radius: 5px;
-  margin: 5px;
-}
+                  <div class="row bottom-margin">
+                    <div class="col-sm-6">
+                        Commercial Space Description:
+                    </div>
+                  </div>
+
+                  <div class="row bottom-margin">
+                      <div class="col-sm-12">
+                          <textarea class="p-txtarea">Coffe shop.</textarea>
+                      </div>
+                  </div>
+
+                </div>
+                <div class="col-sm-4">
+                  <div class="row border-bottom guid-text">UAD Guidance</div>
+                  <div class="row">UAD Guidance</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <p-footer class="p-footer">
+      <button type="button" pButton icon="pi pi-check" (click)="displayModal1=false" label="Cancel"></button>
+      <button type="button" pButton icon="pi pi-times" (click)="displayModal1=false" label="Ok" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-dialog>
+ 
+</div>
